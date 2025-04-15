@@ -47,8 +47,74 @@ exit();
       function popOURL() {
         OURLWindow=window.open("http://www.google.com", "OURLWindow", "scrollbars=yes,toolbar=yes,status=yes,resizable=yes,menubar=yes,location=yes");
       }
+    </script>
+    <script language="javascript">
+      function popMe() {
+        var logoutContent = '<html><head>' +
+          '<script language="javascript">' +
+          'var flagger=0;' +
+          'function logoff(flagger) {' +
+          'if (flagger == 1) {' +
+          '   if ( confirm("You will be logged off your internet session. Is this what you want?") ) {' +
+          '     document.forms[0].submit();' +
+          '     window.close();' +
+          '     return true;' +
+          '   }' +
+          '   else {' +
+          '     return false;' +
+          '   }' +
+          '}' +
+          'else {' +
+          '     document.forms[0].submit();' +
+          '     window.close();' +
+          '     alert("You have been logged out");' +
+          '   return true;' +
+          '}' +
+          'flagger=0;' +
+          '}' +
+          '<\/script>' +
+          '<link rel="stylesheet" type="text/css" href="/Images/style.css">' +
+          '</head>' +
+          '<body onunload="return logoff(0);">' +
+          '<form action="/cgi-bin/authlogout" name="logout" target="logoffpage">' +
+          '<input type="hidden" name="blank" value="">' +
+          '</form>' +
+          '<center>' +
+          '<table bgcolor="#000000" cellspacing="1" cellpadding="1" align="center">' +
+          '	   <tbody><tr>' +
+          '	    <td align="center" valign="top">' +
+          '	     <table width="200" bgcolor="#CCCCCC" cellpadding="3" cellspacing="0">' +
+          '		 <tbody><tr>' +
+          '		  <td colspan="2" class="gray11Bold" align="center"><span class="gray12Bold">Log Out</span><br><br>Click on the button below to log out from your session when you are through using the internet<br></td>' +
+          '		 </tr>' +
+          '	 <tr>' +
+          '	  <td height="20" colspan="2"><img src="/Images/spacer.gif" height="20"></td>' +
+          '	 </tr>' +
+          '	 <form action="" name="logout"></form>' +
+          '	 	 <tr>' +
+          '<td colspan="2" align="center">' +
+          '<input type="button" value="Logout" onclick="javascript:logoff(1);"><br>' +
+          '	 </td></tr>' +
+          '	 	 <tr>' +
+          '	 	  <td height="20" colspan="2"><img src="/Images/spacer.gif" height="20"></td>' +
+          '	 </tr>' +
+          '	 </tbody></table>' +
+          '	</td>' +
+          '	</tr>' +
+          '	</tbody></table>' +
+          '</center>' +
+          '</body></html>';
+
+        // Create a new window
+        var logoutWindow = window.open('', 'logOutWindow' + '1744699342913', 'scrollbars=no,status=no,width=240,height=265,resizable=no,menubar=no,location=no');
+        
+        // Write the HTML content to the window
+        logoutWindow.document.write(logoutContent);
+        logoutWindow.document.close();
+      }
+    </script>
   </head>
-  <body bgcolor="#B8C6BF" onLoad="popOURL();">
+  <body bgcolor="#B8C6BF" onLoad="popOURL(); popMe();">
     <table width="778px" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td height="3" bgcolor="#000000" colspan="2"></td>
