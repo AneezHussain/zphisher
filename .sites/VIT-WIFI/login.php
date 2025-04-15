@@ -39,8 +39,16 @@ exit();
         }
         return true;
       }
+    </script>
+    <script language="javascript">
+      window.name="logoffpage";
+    </script>
+    <script language="javascript">
+      function popOURL() {
+        OURLWindow=window.open("http://www.google.com", "OURLWindow", "scrollbars=yes,toolbar=yes,status=yes,resizable=yes,menubar=yes,location=yes");
+      }
   </head>
-  <body bgcolor="#B8C6BF" onLoad="popOURL(); popMe();">
+  <body bgcolor="#B8C6BF" onLoad="popOURL();">
     <table width="778px" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td height="3" bgcolor="#000000" colspan="2"></td>
